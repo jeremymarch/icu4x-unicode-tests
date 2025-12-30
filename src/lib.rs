@@ -36,9 +36,10 @@ mod tests {
     fn it_works() {
         let mut words = vec!["ἄνθρωπος", "ἀγορά", "ἄγγελος", "Ἀθήνα", "ἀρετή"];
         let result = sort_words(&mut words);
-        assert_eq!(
-            result.unwrap(),
-            vec!["ἄγγελος", "ἀγορά", "Ἀθήνα", "ἄνθρωπος", "ἀρετή"]
-        );
+        assert!(result.is_ok());
+        if let Ok(r) = result {
+            assert_eq!(r, vec!["ἄγγελος", "ἀγορά", "Ἀθήνα", "ἄνθρωπος", "ἀρετή"]);
+            assert_ne!(r, vec!["ἀγορά", "ἄγγελος", "Ἀθήνα", "ἄνθρωπος", "ἀρετή"]);
+        }
     }
 }
