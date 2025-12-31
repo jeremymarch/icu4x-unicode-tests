@@ -4,6 +4,8 @@ The ICU4X library allows one to reduce binary size by only including the require
 
 In this test, I include only the Greek locale data needed for sorting Greek.  I test sorting with the Primary, Secondary, Tertiary, and Quaternary levels.
 
+## How to build
+
 Install icu4x-datagen with (version should match version of library):  
 cargo install icu4x-datagen --version 2.1.1 --force
 
@@ -18,6 +20,6 @@ The --markers-for-bin option includes only the keys used in the binary.  So this
 
 For the locale, just used "el" for icu4x-datagen. In the code, you can specify preferences such as "el-u-kn-true", which is used to sort numbers numerically rather than as strings.
 
-Reference:  
+## Reference 
 https://www.credativ.de/en/blog/credativ-inside/icu4x-what-it-can-do-and-how-to-do-it/  
 https://github.com/unicode-org/icu4x/blob/main/tutorials/data-management.md
