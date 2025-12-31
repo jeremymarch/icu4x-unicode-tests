@@ -1,4 +1,8 @@
-# Tests for Rust's ICU4X Collator
+# Tests for Rust's ICU4X Unicode Collator
+
+The ICU4X library allows one to reduce binary size by only including the required unicode data for the specified locales.  This is achieved by using the `BlobDataProvider` which allows one to embed the data directly into the binary.  The blob is generated using the `icu4x-datagen` tool.  Using the `icu4x-datagen` option --markers-for-bin lets one further reduce binary size by analyzing the binary and only including the data that is actually used.
+
+In this test, I include only the Greek locale data needed for sorting Greek.  I test sorting with the Primary, Secondary, Tertiary, and Quaternary levels.
 
 Install icu4x-datagen with (version should match version of library):  
 cargo install icu4x-datagen --version 2.1.1 --force
